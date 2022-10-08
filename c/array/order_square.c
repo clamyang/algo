@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
 
   //order_square(nums, length);
   //order_square_hard(nums, length);
-  order_square_d(nums, length);
+  order_square_fault(nums, length);
 
   for (int i = 0; i < length; i++) {
     printf("%d\n", nums[i]);
