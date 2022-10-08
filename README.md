@@ -1,6 +1,7 @@
 # algo
 A repository of Algorithm learning.
 
-Implement by C lang or My favourite Golang.
+Implement by C language or my favourite Go.
 
 I think use C implement Algorithm will get more challenge.
+
