@@ -64,7 +64,6 @@ void replace_string_hard(char statement[])
         if (statement[i] != ' ')
         {
             happy[j] = statement[i];
-            j;
         }
         else
         {
