@@ -35,6 +35,29 @@ void left_shitf(char str[], int shift)
 }
 
 // 通过多次反转实现，降低时间复杂度
+// ba ccd
+// ba dcc
+// ccdab
 void left_shitf_hard(char str[], int shift)
 {
+    for (int i = 0, j = shift - 1; j > 0; j--, i++)
+    {
+        char single = str[j];
+        str[j] = str[i];
+        str[i] = single;
+    }
+
+    for (int i = shift, j = strlen(str) - 1; j > i; j--, i++)
+    {
+        char single = str[j];
+        str[j] = str[i];
+        str[i] = single;
+    }
+
+    for (int i = 0, j = strlen(str) - 1; j > i; j--, i++)
+    {
+        char single = str[j];
+        str[j] = str[i];
+        str[i] = single;
+    }
 }
