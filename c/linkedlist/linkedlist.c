@@ -25,6 +25,8 @@ bool is_cycle(struct Node *head);
 struct Node *get_last(struct Node *head);
 // 反转链表
 struct Node *reverse(struct Node *head);
+// 双指针反转链表
+struct Node *reverse_hard(struct Node *head);
 // 合并两个有序链表
 struct Node *merge_2_sorted(struct Node *h1, struct Node *h2);
 
@@ -52,9 +54,9 @@ int main(void)
   printf("%d\n", is_cycle(head));
 
   struct Node *h1;
-  h1 = reverse(head);
-
-  // traverse(h1);
+  // h1 = reverse(head);
+  h1 = reverse_hard(head);
+  traverse(h1);
 
   printf("*********\n");
 
@@ -164,12 +166,29 @@ struct Node *reverse(struct Node *head)
     h1->len++;
   }
 
-  // TOOD answer 2
-  // 时间复杂度 O(n)
-  // 空间复杂度 O(1)
-  //
-
   return h1;
+}
+
+struct Node *reverse_hard(struct Node *head)
+{
+  // answer 2
+  // 时间复杂度 O(n)
+  // 空间复杂度 O(1clear)
+  // double pointer
+
+  struct Node *pre, *cur, *next;
+  cur = head;
+  pre = NULL;
+  while (cur != NULL)
+  {
+    next = cur->next;
+    cur->next = pre;
+    pre = cur;
+
+    cur = next;
+  }
+
+  return pre;
 }
 
 bool is_cycle(struct Node *head)
