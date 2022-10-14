@@ -7,6 +7,7 @@
 |        | [有序数组的平方](https://www.programmercarl.com/0977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.html) | 1.先全部进行平方操作，在进行排序<br />2.需要额外的存储空间，双指针 | 因为负数的存在                                               |
 |        | [长度最小子数组](https://www.programmercarl.com/0209.%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.html#%E6%9A%B4%E5%8A%9B%E8%A7%A3%E6%B3%95) | 1.暴力解决<br />2.滑动窗口，降低时间复杂度                   | 在看过滑动窗口思路后，可以完整的实现出来。                   |
 |        | [螺旋矩阵II](https://www.programmercarl.com/0059.%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5II.html) | 1.没有任何思路，抄答案了解了一下                             | 虽然没涉及算法，但是感觉比较难！                             |
+|        |                           三数之和                           | 1.双指针方式，但是需要先将数组进行排序                       | 在处理重复元素时，需要注意如何过滤。                         |
 | 字符串 | [反转字符串](https://www.programmercarl.com/0344.%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2.html) | 1. 双指针，两两交换                                          | 想到了这种方式值得鼓励                                       |
 |        | [反转字符串](https://www.programmercarl.com/0541.%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2II.html)II | 1.最开始也是没读懂题目，多读几遍就能解出来了                 | 大脑过载的时候确实需要休息！                                 |
 |        | [替换空格](https://www.programmercarl.com/%E5%89%91%E6%8C%87Offer05.%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC.html) | 1.暴力解决，空间复杂度较高<br />2.看了双指针思路自己实现     | 在于如何将一个空格扩大                                       |
