@@ -73,16 +73,16 @@ func (node *TreeNode) preByIterate() []int {
 
 	stack.PushBack(node)
 	for stack.Len() != 0 {
-		node := stack.Remove(stack.Back()).(*TreeNode)
+		top := stack.Remove(stack.Back()).(*TreeNode)
 
-		ans = append(ans, node.val)
+		ans = append(ans, top.val)
 
 		if node.right != nil {
-			stack.PushBack(node.right)
+			stack.PushBack(top.right)
 		}
 
 		if node.left != nil {
-			stack.PushBack(node.left)
+			stack.PushBack(top.left)
 		}
 	}
 	return ans
@@ -133,7 +133,7 @@ func (node *TreeNode) postByIterate() []int {
 }
 
 func reverse(a []int) {
-	l, r := 0, len(a) - 1
+	l, r := 0, len(a)-1
 	for l < r {
 		a[l], a[r] = a[r], a[l]
 		l, r = l+1, r-1

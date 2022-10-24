@@ -32,3 +32,21 @@ func TestTraverse(t *testing.T) {
 		})
 	}
 }
+
+func TestTraverseInLayer(t *testing.T) {
+	tests := []struct {
+		name string
+		want [][]int
+	}{
+		{"layer", [][]int{{2}, {5, 3}, {7}, {9, 6}}},
+	}
+
+	root := NewTree()
+	root.init()
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			assert.True(t, reflect.DeepEqual(tt.want, TraverseInLayer(root)))
+		})
+	}
+}
