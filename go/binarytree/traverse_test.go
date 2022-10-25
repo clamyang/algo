@@ -50,3 +50,17 @@ func TestTraverseInLayer(t *testing.T) {
 		})
 	}
 }
+
+func TestReverseBinaryTree(t *testing.T) {
+	root := NewTree()
+	root.init()
+
+	assert.True(t, reflect.DeepEqual([]int{2, 3, 5, 7, 6, 9}, ReverseBinaryTree(root)))
+}
+
+func TestReverseByRecursive(t *testing.T) {
+	root := NewTree()
+	root.init()
+
+	assert.True(t, reflect.DeepEqual([]int{2, 3, 5, 7, 6, 9}, ReverseByRecursive(root).preByIterate()))
+}
