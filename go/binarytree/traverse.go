@@ -77,11 +77,11 @@ func (node *TreeNode) preByIterate() []int {
 
 		ans = append(ans, top.val)
 
-		if node.right != nil {
+		if top.right != nil {
 			stack.PushBack(top.right)
 		}
 
-		if node.left != nil {
+		if top.left != nil {
 			stack.PushBack(top.left)
 		}
 	}
