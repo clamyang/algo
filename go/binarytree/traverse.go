@@ -35,6 +35,24 @@ func (node *TreeNode) init() {
 
 }
 
+func (node *TreeNode) initComplete() {
+	node.val = 2
+
+	node.left = new(TreeNode)
+	node.left.val = 5
+
+	node.right = new(TreeNode)
+	node.right.val = 3
+
+	node.left.left = new(TreeNode)
+	node.left.left.val = 7
+	node.left.right = new(TreeNode)
+	node.left.right.val = 8
+
+	node.left.left.left = new(TreeNode)
+	node.left.left.left.val = 9
+}
+
 // 中 左 右
 func (node *TreeNode) preOrder() {
 	if node == nil {
