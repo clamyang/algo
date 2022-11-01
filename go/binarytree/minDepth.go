@@ -62,8 +62,6 @@ func MinDepthPre(root *TreeNode, depth int) {
 	if root.right != nil {
 		MinDepthPre(root.right, depth+1)
 	}
-
-	return
 }
 
 // MinDepthIterate 迭代法是按照每一层从左到右的顺序进行遍历的
