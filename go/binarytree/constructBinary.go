@@ -38,3 +38,31 @@ func getIndex(val int, arr []int) int {
 	}
 	return 0
 }
+
+// ConstructBinaryTreeFromPreAndIn 从前序和中序构造二叉树
+func ConstructBinaryTreeFromPreAndIn(preorder []int, inorder []int) *TreeNode {
+	if len(preorder) == 0 {
+		return nil
+	}
+
+	root := new(TreeNode)
+	middle := preorder[0]
+	root.val = middle
+
+	if len(preorder) == 1 {
+		return root
+	}
+
+	inIdx := getIndex(middle, inorder)
+
+	leftIn, rightIn := inorder[:inIdx], inorder[inIdx+1:]
+
+	preorder = preorder[1:]
+
+	leftpre, rightpre := preorder[:len(leftIn)], preorder[len(leftIn):]
+
+	root.left = ConstructBinaryTreeFromPreAndIn(leftpre, leftIn)
+	root.right = ConstructBinaryTreeFromPreAndIn(rightpre, rightIn)
+
+	return root
+}
