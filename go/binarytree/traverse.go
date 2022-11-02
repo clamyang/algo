@@ -32,7 +32,6 @@ func (node *TreeNode) init() {
 
 	node.left.left.right = new(TreeNode)
 	node.left.left.right.val = 6
-
 }
 
 func (node *TreeNode) initComplete() {
@@ -51,6 +50,28 @@ func (node *TreeNode) initComplete() {
 
 	node.left.left.left = new(TreeNode)
 	node.left.left.left.val = 9
+}
+
+//    6
+//  5   7
+// 3 4
+//2
+func (node *TreeNode) initSearchTree() {
+	node.val = 7
+
+	node.left = new(TreeNode)
+	node.left.val = 4
+
+	node.right = new(TreeNode)
+	node.right.val = 8
+
+	node.left.left = new(TreeNode)
+	node.left.left.val = 3
+	node.left.right = new(TreeNode)
+	node.left.right.val = 6
+
+	node.left.left.left = new(TreeNode)
+	node.left.left.left.val = 2
 }
 
 // 中 左 右
