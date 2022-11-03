@@ -13,3 +13,10 @@ func TestValidateBSTByIn(t *testing.T) {
 	ValidateBSTByIn(root)
 	fmt.Println(sort.IsSorted(arrIn))
 }
+
+func TestIsValidateBST(t *testing.T) {
+	root := NewTree()
+	root.initSearchTree()
+
+	fmt.Println(IsValidBST(root))
+}

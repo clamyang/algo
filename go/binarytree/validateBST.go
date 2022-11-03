@@ -2,7 +2,6 @@ package binarytree
 
 import (
 	"container/list"
-
 )
 
 // #98 验证二叉搜索树
@@ -39,6 +38,8 @@ func ValidateBSTByIn(root *TreeNode) {
 }
 
 // 中序迭代法方式实现
+// 需要理解 pre 指针的含义，二叉搜索树的中序遍历结果是递增的，
+// 使用 pre 指向前一个节点，如果前一个节点值大于当前节点，就不是二叉搜索树。
 func IsValidBST(root *TreeNode) bool {
 	stack := list.New()
 	stack.PushBack(root)
@@ -47,12 +48,12 @@ func IsValidBST(root *TreeNode) bool {
 	var pre *TreeNode
 
 	for cur != nil || stack.Len() != 0 {
-		if cur.left != nil {
-			stack.PushBack(cur.left)
+		if cur != nil {
+			stack.PushBack(cur)
 			cur = cur.left
 		} else {
 			cur = stack.Remove(stack.Back()).(*TreeNode)
-			if pre != nil && pre.val >= cur.val {
+			if pre != nil && cur.val <= pre.val {
 				return false
 			}
 
