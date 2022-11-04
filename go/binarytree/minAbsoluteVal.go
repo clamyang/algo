@@ -8,6 +8,9 @@ func MinAbsoluteValByLayer(root *TreeNode) int {
 	return getByLayer(root)
 }
 
+// NOTE: 这里严重错误，写出的答案与题意不符..
+// 人家求的是绝对值的最小值，结果自己用层序求了最大值..
+// 确实傻呗...
 func getByLayer(root *TreeNode) int {
 	queue := list.New()
 	queue.PushBack(root)
@@ -48,4 +51,29 @@ func getByLayer(root *TreeNode) int {
 	}
 
 	return maxVal - minVal
+}
+
+func MinAbsoluteVal(root *TreeNode) {
+	minVal := 100
+
+	stack := list.New()
+
+	cur := root
+	var pre *TreeNode
+
+	for cur != nil || stack.Len() != 0 {
+		if cur != nil {
+			stack.PushBack(cur)
+			cur = cur.left
+		} else {
+			cur = stack.Remove(stack.Back()).(*TreeNode)
+			if pre != nil {
+				minVal = min(minVal, cur.val-pre.val)
+			}
+
+			pre = cur
+
+			cur = cur.right
+		}
+	}
 }
