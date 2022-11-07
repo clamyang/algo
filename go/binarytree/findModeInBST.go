@@ -25,6 +25,7 @@ func FindModeInBinaryTree(root *TreeNode) {
 		}
 	}
 
+	// 后续在这个 map 中取出频率最高的即可
 	fmt.Println(counter)
 }
 

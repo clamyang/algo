@@ -18,5 +18,5 @@ func TestFindModeByRecursive(t *testing.T) {
 
 	FindModeByRecursive(root)
 
-	fmt.Println(counter)	
+	fmt.Println(counter)
 }
