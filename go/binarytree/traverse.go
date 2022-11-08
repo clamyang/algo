@@ -52,10 +52,12 @@ func (node *TreeNode) initComplete() {
 	node.left.left.left.val = 9
 }
 
-//    6
-//  5   7
-// 3 4
-//2
+/*
+		7
+	4		8
+3 		6
+2
+*/
 func (node *TreeNode) initSearchTree() {
 	node.val = 7
 
