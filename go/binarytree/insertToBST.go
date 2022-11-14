@@ -8,7 +8,7 @@ package binarytree
 3 		6
 2
 */
-func InsertToBSTByIter(root *TreeNode, target int) *TreeNode {
+func InsertIntoBSTByIter(root *TreeNode, target int) *TreeNode {
 	if root == nil {
 		return &TreeNode{val: target}
 	}
@@ -28,6 +28,23 @@ func InsertToBSTByIter(root *TreeNode, target int) *TreeNode {
 				pre.left = &TreeNode{val: target}
 			}
 		}
+	}
+
+	return root
+}
+
+// 在递归的过程中给子节点赋值
+func InsertIntoBSTByRecursive(root *TreeNode, target int) *TreeNode {
+	if root == nil {
+		return &TreeNode{val: target}
+	}
+
+	if root.val > target {
+		root.left  = InsertIntoBSTByRecursive(root.left, target)
+	}
+
+	if root.val < target {
+		root.right = InsertIntoBSTByRecursive(root.right, target)
 	}
 
 	return root
