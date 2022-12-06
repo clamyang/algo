@@ -1,5 +1,7 @@
 package backtracking
 
+import "fmt"
+
 func letterCombinations(digits string) []string {
 	length := len(digits)
 	if length == 0 || length > 4 {
@@ -34,4 +36,41 @@ func recursion(tempString, digits string, Index int, digitsMap [10]string, res *
 		recursion(tempString, digits, Index+1, digitsMap, res)
 		tempString = tempString[:len(tempString)-1] //回溯
 	}
+}
+
+func LetterPhoneNumber() {
+	number, length := "233", len("233")
+
+	maps := map[byte]string{
+		byte(50): "abc",  // 2
+		byte(51): "def",  // 3
+		byte(52): "ghi",  // 4
+		byte(53): "jkl",  // 5
+		byte(54): "mno",  // 6
+		byte(55): "pqrs", // 7
+		byte(56): "tuv",  // 8
+		byte(57): "wxyz", // 9
+	}
+
+	recursiveLetter(number, length, &[]string{}, 0, maps)
+}
+
+func recursiveLetter(number string, length int, data *[]string, index int, maps map[byte]string) {
+	if index == length {
+		fmt.Println(*data)
+		return
+	}
+
+	numbers := maps[getNumberfromIndex(index, number)]
+
+	for i := 0; i < len(numbers); i++ {
+		*data = append(*data, string(numbers[i]))
+		recursiveLetter(number, length, data, index+1, maps)
+		*data = (*data)[:len(*data)-1]
+	}
+}
+
+func getNumberfromIndex(index int, str string) byte {
+	println(str[index])
+	return str[index]
 }
