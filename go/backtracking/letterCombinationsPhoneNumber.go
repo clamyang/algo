@@ -1,6 +1,8 @@
 package backtracking
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func letterCombinations(digits string) []string {
 	length := len(digits)
@@ -23,7 +25,6 @@ func letterCombinations(digits string) []string {
 	recursion("", digits, 0, digitsMap, &res)
 	return res
 }
-
 func recursion(tempString, digits string, Index int, digitsMap [10]string, res *[]string) { //index表示第几个数字
 	if len(tempString) == len(digits) { //终止条件，字符串长度等于digits的长度
 		*res = append(*res, tempString)
